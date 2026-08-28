@@ -1,0 +1,224 @@
+.backdrop {
+  position: fixed;
+  inset: 0;
+  background: rgba(6, 32, 58, 0.42);
+  z-index: 60;
+  border: 0;
+  padding: 0;
+  cursor: default;
+}
+
+.panel {
+  position: fixed;
+  top: 0;
+  right: 0;
+  bottom: 0;
+  width: min(620px, 94vw);
+  background: var(--color-bg);
+  z-index: 61;
+  overflow-y: auto;
+  box-shadow: var(--shadow-lg);
+  animation: slidein 0.22s ease-out;
+}
+
+@keyframes slidein {
+  from {
+    transform: translateX(24px);
+    opacity: 0;
+  }
+  to {
+    transform: translateX(0);
+    opacity: 1;
+  }
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  padding: 15px 22px;
+  background: var(--color-accent-900);
+  color: #f2f2f3;
+  position: sticky;
+  top: 0;
+  z-index: 2;
+}
+
+.back {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: 30px;
+  height: 30px;
+  flex: none;
+  background: transparent;
+  border: 1px solid rgba(255, 255, 255, 0.3);
+  border-radius: var(--radius-control);
+  color: #f2f2f3;
+  cursor: pointer;
+}
+.back:hover {
+  background: rgba(255, 255, 255, 0.12);
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-width: 0;
+}
+
+.kicker {
+  font-size: 10px;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  opacity: 0.6;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 22px;
+}
+
+.close {
+  margin-left: auto;
+}
+
+.body {
+  padding: 20px 22px 40px;
+  display: flex;
+  flex-direction: column;
+  gap: 18px;
+}
+
+/* — person variant — */
+.miniGrid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px 10px;
+}
+
+.miniLabel {
+  font-size: 9.5px;
+  letter-spacing: 0.09em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.miniValue {
+  font-family: var(--font-heading);
+  font-size: 26px;
+  line-height: 1.05;
+}
+
+.activityRow {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  font-size: 12.5px;
+}
+
+.activityLabel {
+  width: 78px;
+  flex: none;
+  color: var(--muted);
+}
+
+.track {
+  flex: 1;
+  height: 14px;
+  background: var(--chart-track);
+  position: relative;
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.fill {
+  height: 100%;
+  opacity: 0.75;
+}
+
+/* The expected-value marker sits on top of the fill. */
+.marker {
+  position: absolute;
+  top: -3px;
+  bottom: -3px;
+  width: 1px;
+  background: #16232e;
+}
+
+.activityValue {
+  width: 62px;
+  text-align: right;
+  font-variant-numeric: tabular-nums;
+  font-weight: 500;
+}
+
+.points {
+  margin: 0;
+  padding-left: 17px;
+  font-size: 13px;
+  line-height: 1.65;
+  color: #334552;
+}
+
+/* — metric variant — */
+.rankRow {
+  line-height: normal;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  background: transparent;
+  border: 0;
+  padding: 5px 4px;
+  cursor: pointer;
+  font-family: var(--font-body);
+  font-size: 12.5px;
+  text-align: left;
+  border-radius: var(--radius-md);
+  width: 100%;
+}
+.rankRow:hover {
+  background: var(--color-accent-100);
+}
+
+.rankName {
+  width: 126px;
+  flex: none;
+}
+
+.rankTrack {
+  flex: 1;
+  height: 15px;
+  background: var(--chart-track);
+  border-radius: 2px;
+  overflow: hidden;
+}
+
+.rankFill {
+  height: 100%;
+  background: var(--color-accent);
+  opacity: 0.8;
+}
+
+.rankValue {
+  width: 44px;
+  text-align: right;
+  font-weight: 500;
+  font-variant-numeric: tabular-nums;
+}
+
+@media (max-width: 767px) {
+  .panel {
+    width: 100vw;
+  }
+  .body {
+    padding: 16px 14px 32px;
+  }
+  .miniGrid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+  .rankName {
+    width: 96px;
+  }
+}

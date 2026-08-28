@@ -1,0 +1,58 @@
+.shell {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+  font-family: var(--font-body);
+  color: var(--color-text);
+}
+
+/*
+ * Desktop workspace: main column + 336px right rail.
+ * The prototype had no tablet step — below 1180px the rail now drops under the
+ * main column instead of squeezing the desk table.
+ */
+.grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) var(--rail-width);
+  gap: 22px;
+  padding: 22px 26px 56px;
+  align-items: start;
+  max-width: var(--shell-max);
+  width: 100%;
+  margin: 0 auto;
+}
+
+.main {
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+  min-width: 0;
+}
+
+@media (max-width: 1180px) {
+  .grid {
+    grid-template-columns: minmax(0, 1fr);
+    gap: 18px;
+    padding: 18px 18px 48px;
+  }
+}
+
+@media (max-width: 767px) {
+  .grid {
+    padding: 14px 12px 40px;
+    gap: 14px;
+  }
+}
+
+.status {
+  padding: 40px 26px;
+  font-size: 14px;
+  color: var(--color-neutral-700);
+  max-width: var(--shell-max);
+  margin: 0 auto;
+  width: 100%;
+}
+
+.error {
+  color: var(--neg);
+}

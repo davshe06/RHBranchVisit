@@ -1,0 +1,133 @@
+/*
+ * Chrome. This is the only surface that uses --chrome-red; nothing here
+ * encodes data.
+ */
+.bar {
+  display: flex;
+  align-items: center;
+  gap: 18px;
+  padding: 11px 22px;
+  color: #f2f2f3;
+  position: sticky;
+  top: 0;
+  z-index: 40;
+  background-color: var(--chrome-red);
+}
+
+.brand {
+  display: flex;
+  align-items: baseline;
+  gap: 9px;
+  flex: none;
+}
+
+.wordmark {
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 19px;
+  letter-spacing: 0.03em;
+}
+
+/* Placeholder until the brand asset is supplied. */
+.placeholder {
+  font-size: 9px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.45;
+}
+
+.rule {
+  width: 1px;
+  height: 24px;
+  background: rgba(255, 255, 255, 0.2);
+  flex: none;
+}
+
+.titles {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.15;
+  min-width: 0;
+}
+
+.title {
+  font-family: var(--font-heading);
+  font-size: 16px;
+}
+
+.subtitle {
+  font-size: 10.5px;
+  opacity: 0.55;
+}
+
+.right {
+  margin-left: auto;
+  display: flex;
+  align-items: center;
+  gap: 14px;
+}
+
+.select {
+  width: auto;
+  min-height: 31px;
+  padding: 5px 10px;
+  border-radius: var(--radius-control);
+  background: rgba(255, 255, 255, 0.09);
+  color: #f2f2f3;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  font-size: 13px;
+  cursor: pointer;
+  max-width: min(46vw, 340px);
+}
+
+.select option {
+  color: #16232e;
+}
+
+.toggle {
+  display: flex;
+  border: 1px solid rgba(255, 255, 255, 0.25);
+  border-radius: var(--radius-control);
+  overflow: hidden;
+  flex: none;
+}
+
+.tab {
+  line-height: normal;
+  background: transparent;
+  color: #f2f2f3;
+  border: 0;
+  padding: 6px 14px;
+  font-family: var(--font-heading);
+  font-weight: 600;
+  font-size: 13px;
+  cursor: pointer;
+}
+
+.tabOn {
+  background: #f2f2f3;
+  color: var(--color-accent-900);
+}
+
+/* Below the mobile breakpoint the layout is the real thing, so the preview
+   toggle has nothing to switch and the header sheds its second row. */
+@media (max-width: 767px) {
+  .bar {
+    gap: 12px;
+    padding: 9px 14px;
+    flex-wrap: wrap;
+  }
+  .rule,
+  .titles,
+  .toggle {
+    display: none;
+  }
+  .right {
+    width: 100%;
+    margin-left: 0;
+  }
+  .select {
+    width: 100%;
+    max-width: none;
+  }
+}

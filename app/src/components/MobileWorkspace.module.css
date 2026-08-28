@@ -1,0 +1,362 @@
+.shell {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  min-height: 0;
+  /* In desktop preview the mobile layout is held to a phone-width column so
+     the breakpoint styles are what you are actually looking at. It is a width
+     constraint, not a device frame. */
+  width: 100%;
+  margin: 0 auto;
+}
+
+.previewShell {
+  max-width: 430px;
+  border-left: 1px solid var(--color-divider);
+  border-right: 1px solid var(--color-divider);
+  background: var(--color-bg);
+  min-height: calc(100vh - var(--header-height));
+}
+
+.tabs {
+  display: flex;
+  position: sticky;
+  top: var(--header-height);
+  z-index: 30;
+  background: var(--color-surface);
+  border-bottom: 1px solid var(--color-divider);
+}
+
+.previewShell .tabs {
+  top: 0;
+}
+
+.tab {
+  flex: 1;
+  padding: 10px 6px;
+  background: transparent;
+  border: 0;
+  border-bottom: 2px solid transparent;
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 14px;
+  color: var(--color-neutral-700);
+  cursor: pointer;
+}
+
+.tabOn {
+  color: var(--color-accent);
+  border-bottom-color: var(--color-accent);
+}
+
+.screen {
+  display: flex;
+  flex-direction: column;
+  gap: 14px;
+  padding: 0 12px 26px;
+  flex: 1;
+}
+
+.hero {
+  background: var(--color-accent-900);
+  color: #f2f2f3;
+  margin: 0 -12px;
+  padding: 14px 18px 16px;
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+}
+
+.heroKicker {
+  font-size: 9.5px;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  opacity: 0.55;
+}
+
+.heroTitle {
+  font-family: var(--font-heading);
+  font-size: 25px;
+  line-height: 1.1;
+}
+
+.heroMeta {
+  font-size: 11.5px;
+  opacity: 0.6;
+}
+
+.headline {
+  margin: 0;
+  font-size: 18px;
+  line-height: 1.25;
+}
+
+.briefBody {
+  margin: 0;
+  font-size: 13px;
+  line-height: 1.6;
+  color: #334552;
+}
+
+.kpiGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 9px;
+}
+
+.kpi {
+  display: flex;
+  flex-direction: column;
+  gap: 3px;
+  padding: 11px 12px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  text-align: left;
+  cursor: pointer;
+}
+
+.kpiLabel {
+  font-size: 9px;
+  letter-spacing: 0.1em;
+  text-transform: uppercase;
+  color: var(--muted);
+}
+
+.kpiValue {
+  font-family: var(--font-heading);
+  font-size: 27px;
+  line-height: 1;
+}
+
+.kpiDelta {
+  font-size: 11px;
+}
+
+.flag {
+  display: flex;
+  flex-direction: column;
+  gap: 1px;
+  padding: 8px 0 8px 9px;
+  background: transparent;
+  border: 0;
+  border-left: 3px solid var(--color-divider);
+  text-align: left;
+  cursor: pointer;
+  width: 100%;
+  font-family: var(--font-body);
+}
+
+.flagDivider {
+  border-top: 1px solid var(--color-divider);
+}
+
+.flagLabel {
+  font-size: 12.5px;
+  font-weight: 500;
+}
+
+.flagWho {
+  font-size: 11.5px;
+  color: var(--muted);
+}
+
+.action {
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+  padding: 9px 0;
+}
+
+.actionTitle {
+  font-family: var(--font-heading);
+  font-size: 14.5px;
+}
+
+.actionBody {
+  font-size: 12;
+  font-size: 12px;
+  line-height: 1.5;
+  color: #5f7183;
+}
+
+.deskCard {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+  padding: 12px 13px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-card);
+  box-shadow: var(--shadow-sm);
+  width: 100%;
+  text-align: left;
+  cursor: pointer;
+  font-family: var(--font-body);
+}
+
+.deskHead {
+  display: flex;
+  align-items: center;
+  gap: 9px;
+}
+
+.avatar {
+  width: 29px;
+  height: 29px;
+  flex: none;
+  display: grid;
+  place-items: center;
+  border-radius: 8px;
+  font-size: 11px;
+  color: #fff;
+}
+
+.deskNames {
+  display: flex;
+  flex-direction: column;
+  line-height: 1.2;
+  min-width: 0;
+}
+
+.deskName {
+  font-weight: 500;
+  font-size: 14px;
+}
+
+.deskRole {
+  font-size: 11px;
+  color: var(--muted);
+}
+
+.deskRatio {
+  margin-left: auto;
+  font-family: var(--font-heading);
+  font-size: 22px;
+}
+
+.deskStats {
+  display: flex;
+  gap: 14px;
+  font-size: 11.5px;
+  color: var(--muted);
+  border-top: 1px solid var(--color-divider);
+  padding-top: 7px;
+  flex-wrap: wrap;
+}
+
+.deskStats b {
+  color: #16232e;
+  font-weight: 500;
+}
+
+.subhead {
+  display: flex;
+  align-items: baseline;
+  gap: 8px;
+  background: var(--color-accent-900);
+  color: #f2f2f3;
+  margin: 0 -12px;
+  padding: 13px 18px;
+}
+
+.subheadTitle {
+  font-family: var(--font-heading);
+  font-size: 19px;
+}
+
+.subheadMeta {
+  font-size: 11px;
+  opacity: 0.55;
+}
+
+.askScreen {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+  padding: 0;
+}
+
+.askThread {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+  padding: 16px 14px;
+}
+
+.bubble {
+  align-self: flex-start;
+  max-width: 86%;
+  font-size: 13px;
+  line-height: 1.55;
+  padding: 9px 12px;
+  border-radius: var(--radius-control);
+  border: 1px solid var(--color-divider);
+  background: transparent;
+  color: #16232e;
+}
+
+.bubbleUser {
+  align-self: flex-end;
+  background: var(--color-accent);
+  border-color: var(--color-accent);
+  color: #f2f2f3;
+}
+
+.askComposer {
+  display: flex;
+  gap: 7px;
+  padding: 12px 14px;
+  border-top: 1px solid var(--color-divider);
+  background: var(--color-surface);
+  position: sticky;
+  bottom: 0;
+}
+
+.input {
+  width: 100%;
+  min-height: 36px;
+  padding: 6px 10px;
+  font-size: 13px;
+  background: var(--color-surface);
+  border: 1px solid var(--color-divider);
+  border-radius: var(--radius-control);
+  caret-color: var(--color-accent);
+}
+.input:focus-visible {
+  border-color: var(--color-accent);
+  outline-offset: 0;
+}
+
+.send {
+  padding: 0 14px;
+  flex: none;
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-control);
+  color: var(--color-bg);
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 13px;
+  cursor: pointer;
+}
+.send:hover {
+  background: var(--color-accent-600);
+}
+
+.fullButton {
+  padding: 10px;
+  background: var(--color-accent);
+  border: 1px solid var(--color-accent);
+  border-radius: var(--radius-control);
+  color: var(--color-bg);
+  font-family: var(--font-heading);
+  font-weight: var(--font-heading-weight);
+  font-size: 14px;
+  cursor: pointer;
+}
+.fullButton:hover {
+  background: var(--color-accent-600);
+}
