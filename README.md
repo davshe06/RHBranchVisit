@@ -62,10 +62,12 @@ needs to change. Nothing in `components/` reaches past that boundary.
 Pushing to `main` runs `.github/workflows/deploy.yml`, which builds `app/` and
 publishes it to GitHub Pages.
 
-`actions/configure-pages` sets the Pages source to **GitHub Actions** itself, so
-no manual setting is needed — the first run switched the site over from the
-earlier branch-based deploy.
-
-> If you ever see both this workflow *and* a "pages build and deployment" run
-> fire on the same push, the source has reverted to "Deploy from a branch";
-> set Settings → Pages → Source back to **GitHub Actions**.
+> **Required one-time setting:** Settings → Pages → Source → **GitHub Actions**
+> (not "Deploy from a branch").
+>
+> Until it is switched, *both* this workflow and GitHub's built-in
+> "pages build and deployment" run on every push to `main`, and whichever
+> finishes last wins — so the site may serve either the app or the old root
+> `index.html` prototype. `actions/configure-pages` does not switch the source
+> on its own. You can tell it is still wrong if two runs appear in the Actions
+> tab for one push.
